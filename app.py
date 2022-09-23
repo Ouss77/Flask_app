@@ -26,10 +26,9 @@ def login():
 @app.route('/users')
 def users():
     cur = mysql.connection.cursor()
-    resultValue = cur.execute("SELECT * FROM users")
-    if resultValue > 0:
-        userDetails = cur.fetchall()
-        return render_template('users.html', userDetails=userDetails)
+    resultValue = cur.execute("SELECT * FROM employee_data")
+    userDetails = cur.fetchall()
+    return render_template('users.html', userDetails=userDetails)
 
 if __name__ == '__main__':
     app.run(debug=True)
