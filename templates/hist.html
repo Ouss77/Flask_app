@@ -1,0 +1,37 @@
+<div class="container">
+    <link rel="stylesheet" href="static/css/style2.css">
+    <table border="0.2">
+
+        <form method="POST">
+    <h3> Insert the lots that you want to see </h3>
+    <input name="variable"  placeholder="Lots ID">
+    <input type="submit">
+
+
+    <h3> Select the date </h3>
+    <input name= "date_task" type="date" value="2022-01-01"   min="2020-01-01" max="2023-12-31">
+    <input type="submit">
+</form>
+     <tr>
+    <th>lots</th>
+         <th>city</th>
+         <th>Vue Max An</th> <th>Vue min jour</th> <th>Vue max jour</th> <th>V num</th> <th>V index</th> <th>date</th>
+ </tr>
+
+    <tbody>
+  {% for user in userDetails %}
+  <tr>
+    <td> {{user[0]}} </td>
+      <td> {{user[1]}} </td>
+      <td> {{user[2]}} </td>
+      <td> {{user[3]}} </td>
+      <td> {{user[4]}} </td>
+      <td> {{user[5]}} </td>
+      <td> {{user[6]}} </td>
+      <td> {{user[7]}} </td>
+      <td> {{user[8]}} </td>
+             </tr>
+  {% endfor %}
+        </tbody>
+    </table>
+</div>
